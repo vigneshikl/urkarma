@@ -5,4 +5,15 @@
           Welcome to {{ title }}!
       </h1>
   </div>
+  <form #infoForm="ngForm" (ngSubmit)="onSubmit(infoForm)">
+    <mat-form-field class="">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="enter your name" ngModel name="username" #username="ngModel">
+    </mat-form-field><br>
+    <mat-form-field class="">
+      <mat-label>Distance covered</mat-label>
+      <input matInput placeholder="distance covered" ngModel name="distanceCovered" #distanceCovered="ngModel">
+    </mat-form-field><br>
+    <button mat-raised-button color="primary">Whats my karma?</button>
+  </form>
 </div>

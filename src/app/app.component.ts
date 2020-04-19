@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {AppData} from './app.data';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,20 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Calculator App';
-  num1: number;
-  num2: number;
-  result: number;
-  add() {
-      this.result = this.num1 + this.num2;
-  }
-  substract() {
-      this.result = this.num1 - this.num2;
-  }
-  multiply() {
-      this.result = this.num1 * this.num2;
-  }
-  divide() {
-      this.result = this.num1 % this.num2;
+  title = 'Karma Calculator';
+  data = new AppData('puppy', 27);
+  public onSubmit(it: NgForm) {
+    alert(JSON.stringify(it.value));
   }
 }
